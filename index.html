@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Career Roadmap Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <p class="tag">AI Portfolio Project</p>
+        <h1>AI Career Roadmap Generator</h1>
+        <p>
+          Generate a personalized tech career roadmap based on your goal, current skills,
+          experience level, and weekly study time.
+        </p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Build Your Roadmap</h2>
+
+        <label>Career Goal</label>
+        <select id="careerGoal">
+          <option value="frontend">Frontend Developer</option>
+          <option value="backend">Backend Developer</option>
+          <option value="fullstack">Full Stack Developer</option>
+          <option value="data">Data Analyst</option>
+          <option value="ai">AI / Machine Learning Developer</option>
+          <option value="wordpress">WordPress / WooCommerce Developer</option>
+        </select>
+
+        <label>Current Level</label>
+        <select id="level">
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+
+        <label>Study Time Per Week</label>
+        <select id="hours">
+          <option value="3">3 hours/week</option>
+          <option value="5">5 hours/week</option>
+          <option value="8">8 hours/week</option>
+          <option value="12">12+ hours/week</option>
+        </select>
+
+        <label>Your Current Skills</label>
+        <div class="skills">
+          <label><input type="checkbox" value="html"> HTML</label>
+          <label><input type="checkbox" value="css"> CSS</label>
+          <label><input type="checkbox" value="javascript"> JavaScript</label>
+          <label><input type="checkbox" value="php"> PHP</label>
+          <label><input type="checkbox" value="mysql"> MySQL</label>
+          <label><input type="checkbox" value="python"> Python</label>
+          <label><input type="checkbox" value="git"> Git/GitHub</label>
+          <label><input type="checkbox" value="api"> API Integration</label>
+          <label><input type="checkbox" value="wordpress"> WordPress</label>
+          <label><input type="checkbox" value="machine-learning"> Machine Learning</label>
+        </div>
+
+        <button onclick="generateRoadmap()">Generate Roadmap</button>
+        <button class="secondary" onclick="clearHistory()">Clear Saved History</button>
+      </div>
+
+      <div class="card result-card">
+        <h2>Your AI-Style Recommendation</h2>
+        <div id="result" class="empty">
+          Complete the form and generate your personalized roadmap.
+        </div>
+      </div>
+    </section>
+
+    <section class="card history-card">
+      <h2>Saved Roadmap History</h2>
+      <div id="history"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
