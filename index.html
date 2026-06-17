@@ -3,19 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>AI Career Roadmap Generator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="app">
+
     <section class="hero">
       <div>
-        <p class="tag">AI Portfolio Project</p>
+        <span class="tag">AI Portfolio Project</span>
         <h1>AI Career Roadmap Generator</h1>
         <p>
           Generate a personalized tech career roadmap based on your goal, current skills,
           experience level, and weekly study time.
         </p>
+
+        <div class="hero-actions">
+          <button onclick="loadDemoProfile()">Load Demo Profile</button>
+          <button class="secondary" onclick="exportHistoryCSV()">Export History CSV</button>
+          <button class="danger" onclick="clearHistory()">Clear History</button>
+        </div>
+      </div>
+
+      <div class="hero-score">
+        <span>Career Readiness</span>
+        <h2 id="heroScore">0%</h2>
+        <p id="heroRole">No roadmap generated yet</p>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span>Selected Role</span>
+        <strong id="selectedRoleStat">None</strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Matched Skills</span>
+        <strong id="matchedSkillStat">0</strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Skill Gaps</span>
+        <strong id="missingSkillStat">0</strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Estimated Duration</span>
+        <strong id="durationStat">0 weeks</strong>
       </div>
     </section>
 
@@ -23,7 +59,7 @@
       <div class="card">
         <h2>Build Your Roadmap</h2>
 
-        <label>Career Goal</label>
+        <label for="careerGoal">Career Goal</label>
         <select id="careerGoal">
           <option value="frontend">Frontend Developer</option>
           <option value="backend">Backend Developer</option>
@@ -31,16 +67,18 @@
           <option value="data">Data Analyst</option>
           <option value="ai">AI / Machine Learning Developer</option>
           <option value="wordpress">WordPress / WooCommerce Developer</option>
+          <option value="cybersecurity">Cybersecurity Beginner</option>
+          <option value="uiux">UI/UX Designer</option>
         </select>
 
-        <label>Current Level</label>
+        <label for="level">Current Level</label>
         <select id="level">
           <option value="beginner">Beginner</option>
           <option value="intermediate">Intermediate</option>
           <option value="advanced">Advanced</option>
         </select>
 
-        <label>Study Time Per Week</label>
+        <label for="hours">Study Time Per Week</label>
         <select id="hours">
           <option value="3">3 hours/week</option>
           <option value="5">5 hours/week</option>
@@ -60,10 +98,15 @@
           <label><input type="checkbox" value="api"> API Integration</label>
           <label><input type="checkbox" value="wordpress"> WordPress</label>
           <label><input type="checkbox" value="machine-learning"> Machine Learning</label>
+          <label><input type="checkbox" value="security"> Security Basics</label>
+          <label><input type="checkbox" value="figma"> Figma</label>
+          <label><input type="checkbox" value="seo"> SEO</label>
+          <label><input type="checkbox" value="deployment"> Deployment</label>
         </div>
 
         <button onclick="generateRoadmap()">Generate Roadmap</button>
-        <button class="secondary" onclick="clearHistory()">Clear Saved History</button>
+        <button class="secondary" onclick="printRoadmap()">Print Roadmap</button>
+        <button class="dark" onclick="exportCurrentRoadmap()">Export Roadmap JSON</button>
       </div>
 
       <div class="card result-card">
@@ -75,9 +118,16 @@
     </section>
 
     <section class="card history-card">
-      <h2>Saved Roadmap History</h2>
+      <div class="section-header">
+        <div>
+          <h2>Saved Roadmap History</h2>
+          <p>Review your recent generated roadmaps.</p>
+        </div>
+      </div>
+
       <div id="history"></div>
     </section>
+
   </main>
 
   <script src="script.js"></script>
