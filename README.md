@@ -2,7 +2,11 @@
 
 AI Career Roadmap Generator is an interactive web application that recommends a personalized learning roadmap based on a user's career goal, current skills, experience level, and available study time.
 
-This project is designed as a portfolio-ready frontend system with AI-style decision logic. It can be extended later with real AI API integration.
+This project is designed as a portfolio-ready frontend system with AI-style decision logic. It can be deployed directly using GitHub Pages.
+
+## Live Demo
+
+Live project: https://danishzulkafli.github.io/ai-career-roadmap-generator/
 
 ## Features
 
@@ -10,11 +14,21 @@ This project is designed as a portfolio-ready frontend system with AI-style deci
 - Current skill selection
 - Career readiness score
 - Skill-gap analysis
-- Personalized roadmap generation
+- Matched skills display
+- Missing skills display
+- Estimated learning duration
+- Roadmap timeline
+- Weekly learning plan
 - Recommended portfolio projects
 - Interview preparation questions
-- AI prompt generator for advanced roadmap planning
-- Local storage roadmap history
+- Suggested learning resources
+- AI prompt generator for advanced planning
+- Save roadmap history
+- Export current roadmap as JSON
+- Export roadmap history as CSV
+- Print roadmap report
+- Demo profile loader
+- LocalStorage persistence
 - Responsive user interface
 - GitHub Pages ready
 
@@ -26,18 +40,20 @@ This project is designed as a portfolio-ready frontend system with AI-style deci
 - Data Analyst
 - AI / Machine Learning Developer
 - WordPress / WooCommerce Developer
+- Cybersecurity Beginner
+- UI/UX Designer
 
 ## Tech Stack
 
 - HTML
 - CSS
 - JavaScript
-- Local Storage
+- LocalStorage
 - GitHub Pages
 
 ## How It Works
 
-The system compares the user's selected skills with the required skills for a chosen career path. It calculates a readiness score, identifies missing skills, estimates a learning duration, and generates a roadmap with projects and interview questions.
+The system compares the user's selected skills with the required skills for a chosen career path. It calculates a readiness score, identifies missing skills, estimates a learning duration, and generates a roadmap with projects, interview questions, and suggested resources.
 
 ## AI Integration Concept
 
@@ -54,13 +70,14 @@ Future AI integration can include:
 
 ## Future Improvements
 
-- Add real backend API
-- Add user login
-- Add database storage
-- Add downloadable PDF roadmap
-- Add progress tracking
+- Add real AI API integration
 - Add charts for skill-gap visualization
-- Add real AI response generation
+- Add downloadable PDF roadmap
+- Add progress tracking checklist
+- Add roadmap completion percentage
+- Add user login
+- Add community roadmap sharing
+- Add dark and light mode toggle
 
 ## Purpose
 
